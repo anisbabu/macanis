@@ -1,0 +1,34 @@
+file-directory: D:\work\ibcs\ifmis-master\extra\files
+reportJrxmlPath: D:\work\ibcs\ifmis-master\extra\reports
+
+#google:
+#  recaptcha:
+#    url: https://developers.google.com/recaptcha/docs/verify
+#    key:
+#      secret: 123456
+#      site: recaptchayml
+
+server:
+  port: 9090
+  servlet:
+    context-path: /armr_core
+
+
+spring:
+  datasource:
+#    url: jdbc:oracle:thin:@172.20.32.198:1521/breb  #breb
+    url: jdbc:oracle:thin:@192.168.1.5:1521/oradb19   #ibcs
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    username: armr_tech
+    password: armr_tech
+
+
+#  mail:
+#    host: smtp.gmail.com
+#    port: 4650
+#    username: myemail@gmail.com
+#    password: mypassword
+
+  spring:
+    security:
+      enabled: false

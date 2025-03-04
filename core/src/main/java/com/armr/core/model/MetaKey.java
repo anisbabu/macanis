@@ -1,0 +1,5 @@
+package com.armr.core.model;
+
+enum MetaKey {
+    COUNTRY, LANGUAGE, GENDER, RELIGION, CURRENCY, MODULE, DEVISION, DEPARTMENT, SECTION
+}
