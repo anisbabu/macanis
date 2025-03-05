@@ -13,15 +13,38 @@ server:
   servlet:
     context-path: /armr_core
 
+# Redis Configuration
+
+jakarta:
+  persistence:
+    jdbc:
+      url: jdbc:oracle:thin:@192.168.1.5:1521/oradb19
 
 spring:
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      password:
+      database: 0
+  application:
+    name: core
   datasource:
 #    url: jdbc:oracle:thin:@172.20.32.198:1521/breb  #breb
     url: jdbc:oracle:thin:@192.168.1.5:1521/oradb19   #ibcs
     driver-class-name: oracle.jdbc.driver.OracleDriver
     username: armr_tech
     password: armr_tech
+  jpa:
+#    properties:
+#      hibernate.dialect: org.hibernate.dialect.Oracle19cDialect  # For MySQL
+    hibernate:
+      ddl-auto: update  # Or 'create'/'validate' based on your needs
+    show-sql: true
 
+#  spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect  # For MySQL
+# spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect  # For PostgreSQL
+# spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.Oracle12cDialect  # For Oracle
 
 #  mail:
 #    host: smtp.gmail.com
@@ -29,6 +52,6 @@ spring:
 #    username: myemail@gmail.com
 #    password: mypassword
 
-  spring:
-    security:
-      enabled: false
+#  spring:
+#    security:
+#      enabled: true

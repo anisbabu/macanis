@@ -10,10 +10,13 @@ public class LoginRequestDto {
     //TODO company code range (3 to 6) optional
     private String companyCode;
 
-    @NotBlank
+    //user name can be email, mobile, user name of choice, not more than 50 characters and mini 4
+
+   // @NotBlank
     private String username;
 
-    @NotBlank
+    //TODO password length 6 to 20 upper, lower, number, special character
+   // @NotBlank
     private String password;
 
 }

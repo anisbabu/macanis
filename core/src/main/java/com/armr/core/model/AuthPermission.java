@@ -4,24 +4,32 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import lombok.Data;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.UUID;
+
+
+
 
 @Entity
+@Data
 public class AuthPermission {
     @Id
     @GeneratedValue
-    private UUID id;
+    private String id;
 
     private String clientId;
 
-    private String companyCode;
+   // private String companyCode;
 
     @ManyToOne
-    private AuthUser user;
+    private Company company;
+
+    @ManyToOne
+    private AuthUser authUser;
 
     private String roles; // ROLE WILL BE DEVINED SPECFICALLY
-    private LocalDateTime effectiveFrom;
-    private LocalDateTime effectiveTo;
+    private LocalDate effectiveFrom;
+    private LocalDate effectiveTo;
 }
